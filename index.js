@@ -6,7 +6,9 @@ app.listen(process.env.PORT || 5000, function() {
 });
 
 app.get('/*', function(req, res) {
+	var param = req.params[0];
+	var luckyNum = (Math.random() * 5 + 1).toFixed(0);
     var jsonResponse = [];
-    jsonResponse.push({ "text": "Hi. " + (Math.random() * 5 + 1).toFixed(0) + " is a lucky number..." });
+    jsonResponse.push({ "text": `Hi ${param}. ${luckyNum} is your lucky number...` });
     res.send(jsonResponse);
 });
