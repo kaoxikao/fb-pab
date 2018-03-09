@@ -16,7 +16,7 @@ app.get('/*', function(req, res) {
 });
 
 
-var http = require("https");
+var http = require("http");
 setInterval(function() {
     http.get("https://fb-pab.herokuapp.com", function (res){
     	console.log("Ping at " + moment().format('Do MMM YYYY, HH:mm:ss') );
